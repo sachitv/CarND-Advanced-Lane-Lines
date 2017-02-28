@@ -212,13 +212,15 @@ Here's a [link to my video result](./project_video.mp4)
 
 ###Discussion
 
-####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 There are several issues I encountered while solving this project
 
 1. Noise in the masked image.
 2. Vanishing colours on lighter roads
 3. Oversaturated images
+4. Other cars on the road
 
-I think in the future, I could try to do some cool stuff like boosting the contrast of the projected image before performing my search on it since it will better highlight the edges
-
-Another thing that I thought of is in case one curve starts to differ too much from a curve some time back
+Some possible things I can think of to improve my pipeline are:
+1. I could try to do some cool stuff like boosting the contrast of the projected image before performing my search on it since it will better highlight the edges
+2. In case there's too much of a difference between the left and right radii, I force calculate the lanes using method 1
+3. Use a better combined mask than the one I used that helps filter out noise
